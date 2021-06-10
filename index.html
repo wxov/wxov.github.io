@@ -1,1 +1,153 @@
-sjdfklajlkj
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="ind.css">
+
+    <script src="node_modules/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/pinterest_grid.js"></script>
+    <script src="js/mock.js"></script>
+    <script src="ind.js"></script>
+    <style type="text/css">
+        #gallery-wrapper {
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        img.thumb {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .white-panel {
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+        }
+
+        .white-panel h1 {
+            font-size: 1em;
+        }
+
+        .white-panel h1 a {
+            color: #A92733;
+        }
+
+        .white-panel:hover {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+            margin-top: -5px;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-lg">
+        <header class="out-header shadow">
+            <div class="log">
+                <a href="javascript:;"><img src="images/log.png" alt=""></a>
+            </div>
+            <div class="tap">
+                <p>首页</p>
+                <p>首页</p>
+            </div>
+        </header>
+        <aside class="out-aside shadow">
+            <div class="head">
+                <div class="head-img">
+                    <a href="">
+                        <span><img src="images/head.jpeg" alt=""></span>
+                    </a>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+            </div>
+            <ul class="nav">
+                <li>
+                    <p>0001</p>
+                    <span>></span>
+                </li>
+                <li>
+                    <p>0002</p>
+                    <span>></span>
+                </li>
+                <li>
+                    <p>0003</p>
+                    <span>></span>
+                </li>
+            </ul>
+            <footer></footer>
+        </aside>
+
+        <main class="out-main">
+            <header class="main-header">
+
+            </header>
+            <div class="blog">
+                <div class="blog-list">
+                    <ul id="gallery-wrapper">
+                    </ul>
+                </div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="disabled">
+                            <span>
+                                <span aria-hidden="true">&laquo;</span>
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+
+        <footer class="out-footer">
+            <div class="report-wrap">
+                <a href="https://beian.miit.gov.cn" target="_blank">
+                    <span>备案号：</span><span>蜀ICP备20009239号-1</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="js/EasyLazyload.min.js"></script>
+    <script>
+        $(function(){
+            $("#gallery-wrapper").pinterest_grid({
+                no_columns:2,
+            }); 
+        })
+    </script>
+    <script>
+        lazyLoadInit({
+            coverColor: "white",
+            coverDiv: "<h1>test</h1>",
+            offsetBottom: 0,
+            offsetTopm: 0,
+            showTime: 10,
+            onLoadBackEnd: function (i, e) {
+                console.log("onLoadBackEnd:" + i);
+            }
+            , onLoadBackStart: function (i, e) {
+                console.log("onLoadBackStart:" + i);
+            }
+        });
+    </script>
+</body>
+
+</html>
